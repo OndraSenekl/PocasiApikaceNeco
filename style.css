@@ -1,22 +1,90 @@
+/* style.css */
+
+/* Reset some default styles */
+body, h1, div, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg2NzZ8MHwxfGFsbHwxfHx8fHx8fHwxNjA1NzY2NjA5&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed; /* Cloud image */
+    background-size: cover; /* Cover the entire background */
+    color: #333; /* Dark text color */
+    padding: 20px;
+}
+
+#weather {
+    max-width: 600px;
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    text-align: center; /* Center text within the container */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger font size for the title */
+    color: #007BFF; /* Blue color for the title */
+    margin-bottom: 20px;
+}
+
+#dobronin, #jihlava, #city {
+    margin: 15px 0;
+    font-size: 1.5em; /* Slightly larger font size */
+    font-weight: bold; /* Bold text for temperature display */
+}
+
+form {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center the form elements */
+    margin-top: 20px;
 }
 
-#weather, #dobronin, #jihlava, #city {
-    text-align: center;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
+input[type="text"] {
+    padding: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for input */
+    width: 70%; /* Make input wider */
+    margin-right: 10px; /* Space between input and button */
+    font-size: 1em; /* Consistent font size */
 }
 
-hr {
-    margin: 20px 10px 10px 10px;
+button {
+    padding: 12px 20px;
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    background-color: #007BFF; /* Blue background for button */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth background change and button scaling */
 }
 
-input, button {
-    width: 80%;
-    margin: 10px auto;
-    padding: 10px;
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #weather {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em; /* Responsive heading size */
+    }
+
+    input[type="text"], button {
+        width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 10px; /* Add margin below for spacing */
+    }
+
+    button {
+        margin-top: 10px; /* Space above the button */
+    }
 }

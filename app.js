@@ -19,7 +19,7 @@ function getTemp(city, id) {
             if (data.cod === 200) {
                 //odpoved ok, teplota prisla
                 const temp = data.main.temp;
-                document.getElementById(id).innerText = (city + ": " + temp + "Â°C");
+                document.getElementById(id).innerText = (city + ": " + temp + "°C");
             } else {
                 //sice prisla odpoved, ale je v ni chyba
                 document.getElementById(id).innerText = "Chyba: " + data.message;
@@ -27,16 +27,16 @@ function getTemp(city, id) {
         })
         .catch(error => {
             //sem by se to nemelo dostat...
-            document.getElementById(id).innerText = "ZaĹ™Ă­zenĂ­ nenĂ­ online";
+            document.getElementById(id).innerText = "Zařízení není online";
         });
     } else {
         //nemame zadane mesto
-        document.getElementById(id).innerText = "Zadej mÄ›sto";
+        document.getElementById(id).innerText = "Zadej město";
     }
 }
 
 window.onload = function() {
-    getTemp("DobronĂ­n", "dobronin");
+    getTemp("Dobronín", "dobronin");
     getTemp("Jihlava", "jihlava");
 };
 
